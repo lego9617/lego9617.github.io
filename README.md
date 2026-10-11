@@ -25,11 +25,11 @@ Which settings have the most sightings, and which ones produce above-average str
 
 
 ### How it works
-- `GROUP BY locale` gives one row per type of location.
-- `COUNT(*)` counts the sightings, and the subquery in `pct_of_all` divides by the total to get each locale's share.
-- `HAVING COUNT(*) >= 100` keeps only locales with at least 100 sightings, so tiny samples don't skew the results.
-- `HAVING AVG(strangeness) > (SELECT ...)` keeps only locales whose average strangeness beats the overall average.
-- `ORDER BY avg_strangeness DESC` puts the strangest first.
+- GROUP BY locale gives one row per type of location.
+- COUNT(*) counts the sightings, and the subquery in `pct_of_all` divides by the total to get each locale's share.
+- HAVING COUNT(*) >= 100 keeps only locales with at least 100 sightings, so tiny samples don't skew the results.
+- HAVING AVG(strangeness) > (SELECT ...) keeps only locales whose average strangeness beats the overall average.
+- ORDER BY avg_strangeness DESC puts the strangest first.
 
 ### Results
 
