@@ -27,53 +27,37 @@
   <h2>Projects</h2>
 
   <div class="project">
-    <h3>UFO Sightings Across Eras (SQL)</h3>
-    <p>Used SQL to group UFO sightings into four time periods and compare how many there were, how strange they were rated (0 to 15), and how long they lasted.</p>
-    <p><strong>Tools:</strong> SQL, SQLite, Python, pandas</p>
+    <h3>Hospital Admissions by Province (SQL Implicit Joins)</h3>
+    <p>Used an implicit join across three tables in a practice hospital database to find out how many admissions came from each province, and how many different patients were behind those admissions.</p>
+    <p><strong>Tools:</strong> SQL (SQL sandbox)</p>
 
-    <img src="sightings_by_era.png" alt="Results table of UFO sightings by era" style="max-width:100%; border:1px solid #ddd; border-radius:8px;">
-
-    <table>
-      <tr><th>Era</th><th>Sightings</th><th>Avg strangeness</th><th>Avg duration</th></tr>
-      <tr><td>Before 1900</td><td>214</td><td>6.09</td><td>29.0</td></tr>
-      <tr><td>1900-1949</td><td>1,255</td><td>6.34</td><td>11.7</td></tr>
-      <tr><td>1950-1979</td><td>12,373</td><td>6.64</td><td>17.4</td></tr>
-      <tr><td>1980 and later</td><td>4,274</td><td>6.57</td><td>19.0</td></tr>
-    </table>
+    <img src="province_admissions.png" alt="Query results showing hospital admissions per province" style="max-width:100%; border:1px solid #ddd; border-radius:8px;">
 
     <h4>Key findings</h4>
     <ul>
-      <li>Sightings peaked in 1950-1979, with almost ten times as many reports as 1900-1949.</li>
-      <li>Average strangeness stayed between about 6.1 and 6.6 in every era, so reports became more common, not stranger.</li>
+      <li>Ontario had the most admissions, with 94 total admissions from 62 unique patients.</li>
+      <li>Alberta and Nova Scotia had the fewest, with 1 admission each, and British Columbia and Saskatchewan followed closely with 2 each.</li>
+      <li>There is a massive gap between Ontario and every other province, so admissions in this dataset are heavily concentrated in one place.</li>
     </ul>
 
-    <p><small><a href="https://github.com/lego9617/lego9617.github.io/blob/main/README.md">View the code and full write-up</a></small></p>
+    <p><small><a href="https://github.com/lego9617/lego9617.github.io/blob/main/README.md#hospital-admissions-by-province-sql-implicit-joins">View the code and full write-up</a></small></p>
   </div>
 
   <div class="project">
-    <h3>Strangest UFO Sightings by Location (SQL)</h3>
-    <p>Used SQL to find which types of locations have above-average strangeness ratings, keeping only locations with at least 100 sightings so small samples don't skew the results.</p>
-    <p><strong>Tools:</strong> SQL, SQLite, Python, pandas</p>
+    <h3>Cancer Patient Admissions (SQL Subqueries)</h3>
+    <p>Used a subquery with <code>IN</code> to find every patient admitted to a practice hospital with a cancer diagnosis. The inner query finds the patient IDs, the outer query pulls their names and cities, and each patient is listed once even if they were admitted more than once.</p>
+    <p><strong>Tools:</strong> SQL (SQL sandbox)</p>
 
-    <img src="sightings_by_locale.png" alt="Results table of UFO sightings by locale" style="max-width:100%; border:1px solid #ddd; border-radius:8px;">
-
-    <table>
-      <tr><th>Locale</th><th>Sightings</th><th>% of all</th><th>Avg credibility</th><th>Avg strangeness</th></tr>
-      <tr><td>Wetlands</td><td>104</td><td>0.6</td><td>7.38</td><td>7.04</td></tr>
-      <tr><td>Forest</td><td>483</td><td>2.7</td><td>7.29</td><td>7.02</td></tr>
-      <tr><td>Farmlands</td><td>2,278</td><td>12.6</td><td>7.34</td><td>6.92</td></tr>
-      <tr><td>Pasture</td><td>2,780</td><td>15.3</td><td>7.13</td><td>6.90</td></tr>
-      <tr><td>Oil &amp; Coal</td><td>100</td><td>0.6</td><td>8.02</td><td>6.61</td></tr>
-    </table>
+    <img src="cancer_admissions.png" alt="Query results showing patients admitted with a cancer diagnosis" style="max-width:100%; border:1px solid #ddd; border-radius:8px;">
 
     <h4>Key findings</h4>
     <ul>
-      <li>Every location that beat the overall strangeness average is a rural, natural, or industrial setting.</li>
-      <li>Wetlands and forests had the highest strangeness, about 7.0 out of 15.</li>
-      <li>Pasture and farmlands had the most sightings, together about 28% of all reports.</li>
+      <li>The query returned 5 patients admitted with a cancer diagnosis.</li>
+      <li>The patients came from 5 different cities, and no city appeared more than once.</li>
+      <li>This is a practice dataset, so the results describe the sandbox and not real-world patients.</li>
     </ul>
 
-    <p><small><a href="https://github.com/lego9617/lego9617.github.io/blob/main/README.md#project-2-strangest-sightings-by-locale">View the code and full write-up</a></small></p>
+    <p><small><a href="https://github.com/lego9617/lego9617.github.io/blob/main/README.md#hospital-admissions-analysis-cancer-patients-sql-sandbox">View the code and full write-up</a></small></p>
   </div>
 </section>
 
